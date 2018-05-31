@@ -24,11 +24,12 @@ Enemy.prototype.update = function(dt) {
 		this.x = 0;
 	}
 	
-	//if (this.y - player.y >= -40 && this.x - player.x <= Math.abs(20)) {
+//Check the collision with player:
 	if (this.x < player.x + 60 &&
-   this.x + 60 > player.x &&
-   this.y < player.y + 60 &&
-   60 + this.y > player.y) {
+    this.x + 60 > player.x &&
+    this.y < player.y + 60 &&
+    60 + this.y > player.y) {
+		//Return player to the start position:
 		player.x = 0;
 		player.y = 405;
 	}
@@ -44,7 +45,7 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 
 const Player = function(){
-	this.sprite = 'images/char-boy.png',
+	this.sprite = 'images/char-cat-girl.png',
 	this.x = 0,
 	this.y = 405;
 }
