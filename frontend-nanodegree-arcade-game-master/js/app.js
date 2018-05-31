@@ -1,5 +1,6 @@
-// Enemies our player must avoid
 var Enemy = function(y) {
+	
+
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -40,7 +41,17 @@ const Player = function(){
 }
  
  Player.prototype.update = function() {
-    
+	 for (let enemy in allEnemies) {
+		if ((this.x - enemy.x >= 100) && (this.y - enemy.y >= 100)) {
+			this.x = 0;
+			this.y = 0;
+		}
+	 }
+	 if (this.y == -45) {
+		alert ('You win!');
+		this.x = 0;
+		this.y = 405;
+	}
 };
 
 Player.prototype.render = function() {
@@ -60,6 +71,7 @@ Player.prototype.handleInput = function(move) {
 	}
 
 };
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
