@@ -23,6 +23,15 @@ Enemy.prototype.update = function(dt) {
 	if(this.x > 550) {
 		this.x = 0;
 	}
+	
+	//if (this.y - player.y >= -40 && this.x - player.x <= Math.abs(20)) {
+	if (this.x < player.x + 60 &&
+   this.x + 60 > player.x &&
+   this.y < player.y + 60 &&
+   60 + this.y > player.y) {
+		player.x = 0;
+		player.y = 405;
+	}
 };
 
 // Draw the enemy on the screen, required method for game
@@ -37,16 +46,10 @@ Enemy.prototype.render = function() {
 const Player = function(){
 	this.sprite = 'images/char-boy.png',
 	this.x = 0,
-	this.y = 405
+	this.y = 405;
 }
  
  Player.prototype.update = function() {
-	 for (let enemy in allEnemies) {
-		if ((this.x - enemy.x >= 100) && (this.y - enemy.y >= 100)) {
-			this.x = 0;
-			this.y = 0;
-		}
-	 }
 	 if (this.y == -45) {
 		alert ('You win!');
 		this.x = 0;
