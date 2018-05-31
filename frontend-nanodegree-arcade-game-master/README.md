@@ -9,7 +9,7 @@ Arcade Game Clone project is a complete browser-based classic arcade game.
 
 
 In this game you have a Player and Enemies (Bugs). The goal of the player is to reach the water, 
-without colliding into any one of the enemies. The player can move left, right, up and down. 
+without colliding into any one of the enemies. The player can move left, right, up and down using keybord. 
 The enemies move in varying speeds on the paved block portion of the scene. Once a the player collides 
 with an enemy, the game is reset and the player moves back to the start square. Once the player reaches 
 the water the game is won.
@@ -22,7 +22,7 @@ Clone the GitHub repository and open index.html with your favorite browser
 
 ```
 
-$ git clone https://github.com/Shyscarecrow/MemoryGame.git
+$ git clone https://github.com/Shyscarecrow/ArcadeGame.git
 $ start index.html
 
 
@@ -31,7 +31,7 @@ $ start index.html
 
 ```
 
-$ git clone https://github.com/Shyscarecrow/MemoryGame.git
+$ git clone https://github.com/Shyscarecrow/ArcadeGame.git
 $ open index.html
 
 
