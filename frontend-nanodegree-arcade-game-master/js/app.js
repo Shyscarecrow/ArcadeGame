@@ -9,7 +9,7 @@ var Enemy = function(y) {
     this.sprite = 'images/enemy-bug.png',
 	this.x = 0,
 	this.y = y,
-	this.speed = Math.random()*500;
+	this.speed = Math.random()*800;
 	
 };
 
