@@ -39,18 +39,26 @@ const Player = function(){
 	this.y = 405
 }
  
- Player.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+ Player.prototype.update = function() {
+    
 };
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function() {
-		
+Player.prototype.handleInput = function(move) {
+	switch(move){
+		case 'left': if (this.x != 0) {this.x -= 100};
+		break;
+		case 'right': if (this.x != 400) {this.x += 100};
+		break;
+		case 'up': if (this.y != -45 ) {this.y -= 90};
+		break;
+		case 'down': if (this.y != 405){this.y += 90};
+		break;
+	}
+
 };
 
 // Now instantiate your objects.
