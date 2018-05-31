@@ -1,11 +1,5 @@
 var Enemy = function(y) {
-	
 
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png',
 	this.x = 0,
 	this.y = y,
@@ -13,36 +7,33 @@ var Enemy = function(y) {
 	
 };
 
-// Update the enemy's position, required method for game
+// Updating the enemy's position
 // Parameter: dt, a time delta between ticks
+
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-	this.x += this.speed * dt;
+  	this.x += this.speed * dt;
 	if(this.x > 550) {
 		this.x = 0;
 	}
 	
 //Check the collision with player:
+
 	if (this.x < player.x + 60 &&
     this.x + 60 > player.x &&
     this.y < player.y + 60 &&
     60 + this.y > player.y) {
 		//Return player to the start position:
+		
 		player.x = 0;
 		player.y = 405;
 	}
 };
 
-// Draw the enemy on the screen, required method for game
+// Draw the enemy on the screen, required method for game:
+
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+}
 
 const Player = function(){
 	this.sprite = 'images/char-cat-girl.png',
@@ -51,8 +42,10 @@ const Player = function(){
 }
  
  Player.prototype.update = function() {
+	 // Checking if player reach the water:
 	 if (this.y == -45) {
 		alert ('You win!');
+	//and reset the position to the starting one:
 		this.x = 0;
 		this.y = 405;
 	}
@@ -61,6 +54,8 @@ const Player = function(){
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
+//Changing the position of a player:
 
 Player.prototype.handleInput = function(move) {
 	switch(move){
@@ -90,8 +85,9 @@ let allEnemies = [];
 	}
 
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// This listens for key presses and sends the keys to
+// Player.handleInput() method
+
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
